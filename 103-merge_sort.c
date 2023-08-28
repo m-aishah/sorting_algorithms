@@ -20,11 +20,8 @@ void merge_sort(int *array, size_t size)
 	if (buffer == NULL)
 		return;
 
-	/* Copy array into buffer */
-
-
-
 	top_down_split_merge(array, 0, size, buffer);
+	free(buffer);
 }
 
 /**
@@ -42,7 +39,7 @@ void top_down_split_merge(int *A, size_t start, size_t end, int *B)
 	if (end - start < 2)
 		return;
 
-	middle = start + (end - start) / 2;
+	middle = (end + start) / 2;
 	top_down_split_merge(A, start, middle, B);
 	top_down_split_merge(A, middle, end, B);
 	top_down_merge(A, start, middle, end, B);
@@ -68,10 +65,15 @@ void top_down_merge(int *B, size_t start, size_t middle, size_t end, int *A)
 	print_array(B + middle, end - middle);
 
 	for (i = start, j = middle; i < middle && j < end; k++)
-		A[k] = (B[i] < B[j])? B[i++] : B[j++];
-	for(; i < middle; i++)
+	{
+		if (B[i] < B[j])
+			A[k] = B[i++];
+		else
+			A[k] = B[j++];
+	}
+	for (; i < middle; i++)
 		A[k++] = B[i];
-	for(; j < end; j++)
+	for (; j < end; j++)
 		A[k++] = B[j];
 	for (i = start, k = 0; i < end; i++)
 		B[i] = A[k++];
