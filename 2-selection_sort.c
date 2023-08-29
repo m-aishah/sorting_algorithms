@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * swap - a function to swap 2 elements
+ * swapa - a function to swap 2 elements
  * @array: array whose 2 elemets are to be swapped
  * @i: first element to be swapped
  * @j: second element to be swapped
@@ -28,7 +28,7 @@ void selection_sort(int *array, size_t size)
 	size_t j = 0;
 	size_t min_index;
 
-	if (size < 2)
+	if (array == NULL || size < 2)
 		return;
 
 	for (; i < size - 1; i++)
