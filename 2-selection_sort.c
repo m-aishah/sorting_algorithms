@@ -1,5 +1,12 @@
 #include "sort.h"
 
+/**
+ * swap - a function to swap 2 elements
+ * @array: array whose 2 elemets are to be swapped
+ * @i: first element to be swapped
+ * @j: second element to be swapped
+ */
+
 void swap(int *array, size_t i, size_t j)
 {
 	size_t temp;
@@ -9,21 +16,27 @@ void swap(int *array, size_t i, size_t j)
 	array[j] = temp;
 }
 
+/**
+ * selection_sort - a functionto sort an array using the selection algorithm
+ * @array: array to be sorted
+ * @size: size of the array
+ */
+
 void selection_sort(int *array, size_t size)
 {
 	size_t i = 0;
 	size_t j = 0;
 	size_t min_index;
 
-	if(size < 2)
+	if (size < 2)
 		return;
 
-	for(; i < size - 1; i++)
+	for (; i < size - 1; i++)
 	{
 		min_index = i;
-		for(j = i + 1; j < size; j++)
+		for (j = i + 1; j < size; j++)
 		{
-			if(array[j] < array[min_index])
+			if (array[j] < array[min_index])
 				min_index = j;
 		}
 
