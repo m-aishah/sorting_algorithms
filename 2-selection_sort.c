@@ -1,10 +1,19 @@
 #include "sort.h"
 
+void swap(int *array, size_t i, size_t j)
+{
+	size_t temp;
+
+	temp = array[i];
+	array[i] = array[j];
+	array[j] = temp;
+}
+
 void selection_sort(int *array, size_t size)
 {
 	size_t i = 0;
 	size_t j = 0;
-	size_t min_index, temp;
+	size_t min_index;
 
 	if(size < 2)
 		return;
@@ -18,8 +27,7 @@ void selection_sort(int *array, size_t size)
 				min_index = j;
 		}
 
-		temp = array[i];
-		array[i] = array[min_index];
-		array[min_index] = temp;
+		swap(array, i, min_index);
+		print_array(array, size);
 	}
 }
