@@ -40,7 +40,10 @@ void selection_sort(int *array, size_t size)
 				min_index = j;
 		}
 
-		swapa(array, i, min_index);
-		print_array(array, size);
+		if (i != min_index)
+		{
+			swapa(array, i, min_index);
+			print_array(array, size);
+		}
 	}
 }
