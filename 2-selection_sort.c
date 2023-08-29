@@ -7,7 +7,7 @@
  * @j: second element to be swapped
  */
 
-void swap(int *array, size_t i, size_t j)
+void swapa(int *array, size_t i, size_t j)
 {
 	size_t temp;
 
@@ -40,7 +40,7 @@ void selection_sort(int *array, size_t size)
 				min_index = j;
 		}
 
-		swap(array, i, min_index);
+		swapa(array, i, min_index);
 		print_array(array, size);
 	}
 }
