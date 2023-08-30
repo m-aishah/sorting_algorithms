@@ -42,7 +42,9 @@ void heap_sort(int *array, size_t size)
 
 
 /**
- * build_heap - Build the heap in array so that the largest value is at the root.
+ * build_heap - Build the heap in array so
+ * that the largest value is at the root.
+ *
  * @array: The array in question.
  * @size: The number of integers in the array.
  */
@@ -72,7 +74,7 @@ void heapify(int *array, size_t size, size_t leaf_index, size_t root_index)
 
 	if (left < leaf_index && array[left] > array[max])
 		max = left;
-	
+
 	if ((right < leaf_index) && (array[right] > array[max]))
 		max = right;
 
