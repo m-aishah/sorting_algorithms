@@ -20,6 +20,7 @@ void swap(int *a, int *b)
  * @size: size of the array
  * @l: left boundary
  * @r: right boundary
+ * Return: index where partition occured
  */
 int partition(int *array, size_t size, int l, int r)
 {
