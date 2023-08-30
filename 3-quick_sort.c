@@ -39,6 +39,15 @@ int partition(int *array, size_t size, int l, int r)
 	return (h);
 }
 
+/**
+ * lomuto_sort - a function that implements the lomuto
+ * partition to sort an array
+ *
+ * @array: array to be sorted
+ * @size: size of the array
+ * @l: left boundary
+ * @r: right boundary
+ */
 void lomuto_sort(int *array, size_t size, int l, int r)
 {
 	int section;
