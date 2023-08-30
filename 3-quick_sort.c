@@ -12,6 +12,15 @@ void swap(int *a, int *b)
 	*a = *a - *b;
 }
 
+/**
+ * partition - a function to partition an array using the lomuto
+ * partition scheme
+ *
+ * @array: array to be partitioned
+ * @size: size of the array
+ * @l: left boundary
+ * @r: right boundary
+ */
 int partition(int *array, size_t size, int l, int r)
 {
 	int i, h;
