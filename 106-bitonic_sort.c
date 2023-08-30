@@ -1,14 +1,16 @@
 #include "sort.h"
 
-void sort_sequence(int *array, size_t size, size_t start, size_t seq_size, int dir);
-void create_bitonic_sequence(int *array, size_t size, size_t start, size_t seq_size, int dir);
+void sort_sequence(int *array, size_t size,
+		size_t start, size_t seq_size, int dir);
+void create_bitonic_sequence(int *array,
+		size_t size, size_t start, size_t seq_size, int dir);
 
 /**
  * swap - Swaps the position of two integers.
  * @a: Pointer to the first integer.
  * @b: Pointer to the second integer.
  */
-void swap(int *a, int *b) 
+void swap(int *a, int *b)
 {
 	*a = *a + *b;
 	*b = *a - *b;
@@ -22,7 +24,7 @@ void swap(int *a, int *b)
  * @array: The array of integers to be sorted.
  * @size: The number of integers in the array.
  */
-void bitonic_sort(int *array, size_t size) 
+void bitonic_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
@@ -39,23 +41,23 @@ void bitonic_sort(int *array, size_t size)
  * @seq_size: The size of the bitonic sequence to be built.
  * @dir: The direction that the bitonic sequence is sorted in.
  */
-void create_bitonic_sequence(int *array, size_t size, size_t start, size_t seq_size, 
-		int dir)
+void create_bitonic_sequence(int *array, size_t size, size_t start,
+		size_t seq_size, int dir)
 {
 	size_t x = seq_size / 2;
 
 	if (seq_size > 1)
 	{
-		printf("Merging [%lu/%lu] (%s):\n", seq_size, size, 
-				(dir == 1)? "UP" : "DOWN");
+		printf("Merging [%lu/%lu] (%s):\n", seq_size, size,
+				(dir == 1) ? "UP" : "DOWN");
 		print_array(array + start, seq_size);
 
 		create_bitonic_sequence(array, size, start, x, 1);
 		create_bitonic_sequence(array, size, start + x, x, 0);
 		sort_sequence(array, size, start, seq_size, dir);
 
-		printf("Result [%lu/%lu] (%s):\n", seq_size, size, 
-				(dir == 1)? "UP" : "DOWN");
+		printf("Result [%lu/%lu] (%s):\n", seq_size, size,
+				(dir == 1) ? "UP" : "DOWN");
 		print_array(array + start, seq_size);
 	}
 }
@@ -68,7 +70,8 @@ void create_bitonic_sequence(int *array, size_t size, size_t start, size_t seq_s
  * @seq_size: The size of the sequence to sort.
  * @dir: Direction the sequence is sorted in.
  */
-void sort_sequence(int *array, size_t size, size_t start, size_t seq_size, int dir)
+void sort_sequence(int *array, size_t size,
+		size_t start, size_t seq_size, int dir)
 {
 	size_t i, y = seq_size / 2;
 
