@@ -69,11 +69,15 @@ void lomuto_sort(int *array, size_t size, int l, int r)
 	}
 }
 
+/**
+ * quick_sort - a function to sort an array using the quick sort algorithm'
+ * @array: array to be sorted
+ * @size: size of the array
+ */
 void quick_sort(int *array, size_t size)
 {
 	if (array == NULL || size < 2)
 		return;
-
 
 	lomuto_sort(array, size, 0, size - 1);
 }
