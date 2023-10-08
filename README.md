@@ -1,5 +1,9 @@
 # Sorting Algorithms Project - README
 
+<p align="center">
+  <img src="sorting_algorthims_icon.png" alt="Project Logo">
+</p>
+
 ## Project Overview
 
 **Project Name**: Sorting Algorithms & Big O
